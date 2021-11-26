@@ -46,7 +46,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $moshimoshi = 'moshi moshi kawaii desu';
+        return response()->json($moshimoshi);
     }
 
     /**
