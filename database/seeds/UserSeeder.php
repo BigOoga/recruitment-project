@@ -18,14 +18,12 @@ class UserSeeder extends Seeder
             'name' => 'Edoardo',
             'email' => 'edoardo.ruffi@gmail.com',
             'password' => Hash::make('password'),
-            'api_token' => Str::random(80),
         ]);
 
         DB::table('users')->insert([
             'name' => 'Andrea',
             'email' => 'andrea.p@gmail.com',
             'password' => Hash::make('password'),
-            'api_token' => Str::random(80),
         ]);
     }
 }
