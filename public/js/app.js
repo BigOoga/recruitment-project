@@ -1995,13 +1995,13 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (response) {
-        console.log(response);
-        _this.feedback = "SUCCESS"; // return success(response);
+        _this.id = null;
+        var data = response.data;
+        _this.feedback = "SUCCESS: ".concat(data);
       })["catch"](function (error) {
-        //console.log(error);
+        _this.id = null;
         var data = error.response.data;
-        console.log(data.error);
-        _this.feedback = "ERROR: ".concat(data.error); // return fail(error);
+        _this.feedback = "ERROR: ".concat(data.error);
       });
     }
   }

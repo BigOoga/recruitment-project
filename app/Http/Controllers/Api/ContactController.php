@@ -57,7 +57,7 @@ class ContactController extends Controller
         $newContact->email = $addedUser->email;
         $newContact->save();
 
-        $response = 'New contact created';
+        $response = 'new contact created!';
         return response()->json($response);
     }
 

@@ -55,16 +55,14 @@ export default {
                     }
                 )
                 .then((response) => {
-                    console.log(response);
-                    this.feedback = "SUCCESS";
-                    // return success(response);
+                    this.id = null;
+                    const data = response.data;
+                    this.feedback = `SUCCESS: ${data}`;
                 })
                 .catch((error) => {
-                    //console.log(error);
+                    this.id = null;
                     const data = error.response.data;
-                    console.log(data.error);
                     this.feedback = `ERROR: ${data.error}`;
-                    // return fail(error);
                 });
         },
     },
