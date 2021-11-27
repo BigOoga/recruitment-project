@@ -21,7 +21,7 @@
                         type="button"
                         class="btn btn-primary"
                     >
-                        Add Contact
+                        Aggiungi
                     </button>
                 </form>
                 <div id="feedback">
@@ -57,12 +57,12 @@ export default {
                 .then((response) => {
                     this.id = null;
                     const data = response.data;
-                    this.feedback = `SUCCESS: ${data}`;
+                    this.feedback = `SUCCESSO: ${data}`;
                 })
                 .catch((error) => {
                     this.id = null;
                     const data = error.response.data;
-                    this.feedback = `ERROR: ${data.error}`;
+                    this.feedback = `ERRORE: ${data.error}`;
                 });
         },
     },

@@ -53,7 +53,7 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof \Illuminate\Database\QueryException) {
 
-            return response()->json(['error' => "Contact already exists!"], 500);
+            return response()->json(['error' => "Il contatto esiste già!"], 500);
         }
 
         return parent::render($request, $exception);

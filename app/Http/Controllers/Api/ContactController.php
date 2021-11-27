@@ -49,15 +49,13 @@ class ContactController extends Controller
         //basic custom validation
         $addedUser = User::findOrFail($data['id']);
         if ($addedUser->id == $userId) {
-            return response()->json(['error' => "You can't add yourself!"], 500);
+            return response()->json(['error' => "Non puoi aggiungere te stesso!"], 500);
         }
-
-
 
         $newContact->email = $addedUser->email;
         $newContact->save();
 
-        $response = 'new contact created!';
+        $response = 'contatto aggiunto!';
         return response()->json($response);
     }
 

@@ -1997,11 +1997,11 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         _this.id = null;
         var data = response.data;
-        _this.feedback = "SUCCESS: ".concat(data);
+        _this.feedback = "SUCCESSO: ".concat(data);
       })["catch"](function (error) {
         _this.id = null;
         var data = error.response.data;
-        _this.feedback = "ERROR: ".concat(data.error);
+        _this.feedback = "ERRORE: ".concat(data.error);
       });
     }
   }
@@ -37688,7 +37688,7 @@ var render = function () {
               attrs: { type: "button" },
               on: { click: _vm.addContact },
             },
-            [_vm._v("\n                    Add Contact\n                ")]
+            [_vm._v("\n                    Aggiungi\n                ")]
           ),
         ]),
         _vm._v(" "),
