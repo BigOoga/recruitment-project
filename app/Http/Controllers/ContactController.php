@@ -1,12 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Contact;
-use App\User;
-use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
@@ -27,7 +23,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return response()->view('contacts.create');
     }
 
     /**
@@ -38,17 +34,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $userId = Auth::id();
-        $data = $request->all();
-        $newContact = new Contact;
-        $newContact->user_id = $userId;
-
-        $addedUser = User::findOrFail($data['id']);
-        $newContact->email = $addedUser->email;
-        $newContact->save();
-
-        $response = 'New contact created';
-        return response()->json($response);
+        //
     }
 
     /**
