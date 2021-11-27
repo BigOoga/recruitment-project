@@ -51,6 +51,9 @@ class ContactController extends Controller
         if ($addedUser->id == $userId) {
             return response()->json(['error' => "You can't add yourself!"], 500);
         }
+
+
+
         $newContact->email = $addedUser->email;
         $newContact->save();
 
