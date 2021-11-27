@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class ContactController extends Controller
 {
@@ -23,7 +25,11 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return response()->view('contacts.create');
+        $userId = Auth::id();
+        $caller = User::findOrFail($userId);
+        $token = $caller->api_token;
+
+        return response()->view('contacts.create', compact('token'));
     }
 
     /**
