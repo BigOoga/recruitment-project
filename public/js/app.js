@@ -1972,16 +1972,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MyApp",
   data: function data() {
     return {
       id: null,
+      feedback: null,
       baseUri: "http://127.0.0.1:8000"
     };
   },
   methods: {
     addContact: function addContact() {
+      var _this = this;
+
       axios.post("".concat(this.baseUri, "/api/contacts"), {
         id: this.id
       }, {
@@ -1989,9 +1995,13 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (response) {
-        console.log(response); // return success(response);
+        console.log(response);
+        _this.feedback = "SUCCESS"; // return success(response);
       })["catch"](function (error) {
-        console.log(error); // return fail(error);
+        //console.log(error);
+        var data = error.response.data;
+        console.log(data.error);
+        _this.feedback = "ERROR: ".concat(data.error); // return fail(error);
       });
     }
   }
@@ -37679,6 +37689,12 @@ var render = function () {
               on: { click: _vm.addContact },
             },
             [_vm._v("\n                    Add Contact\n                ")]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "feedback" } }, [
+          _vm._v(
+            "\n                " + _vm._s(_vm.feedback) + "\n            "
           ),
         ]),
       ]),

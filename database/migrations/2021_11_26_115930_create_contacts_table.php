@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 class CreateContactsTable extends Migration
 {
     /**
@@ -17,7 +18,8 @@ class CreateContactsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('email')->unique();
+            $table->string('email');
+            $table->unique(array('user_id', 'email'));
             $table->timestamps();
         });
     }

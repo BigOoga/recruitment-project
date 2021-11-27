@@ -9,3 +9,12 @@
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+@font-face {
+    font-family: Poppins;
+    src: url(./fonts/Poppins-Regular.ttf);
+}
+
+body {
+    font-family: Poppins;
+}

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class ContactController extends Controller
 {
@@ -38,12 +39,18 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $userId = Auth::id();
         $data = $request->all();
         $newContact = new Contact;
         $newContact->user_id = $userId;
 
+        //basic custom validation
         $addedUser = User::findOrFail($data['id']);
+        if ($addedUser->id == $userId) {
+            return response()->json(['error' => "You can't add yourself!"], 500);
+        }
         $newContact->email = $addedUser->email;
         $newContact->save();
 

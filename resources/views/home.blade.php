@@ -14,7 +14,12 @@
                             </div>
                         @endif
 
-                        {{ __('You are logged in!') }}
+                        {{ __('Welcome!') }}
+                    </div>
+                    <div class="card-body">
+                        Here's your QR code:
+                        <div><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{ $userId }}"
+                                alt=""></div>
                     </div>
                 </div>
                 <div class="card">

@@ -24,6 +24,9 @@
                         Add Contact
                     </button>
                 </form>
+                <div id="feedback">
+                    {{ feedback }}
+                </div>
             </div>
         </div>
     </div>
@@ -35,6 +38,7 @@ export default {
     data() {
         return {
             id: null,
+            feedback: null,
             baseUri: "http://127.0.0.1:8000",
         };
     },
@@ -52,10 +56,14 @@ export default {
                 )
                 .then((response) => {
                     console.log(response);
+                    this.feedback = "SUCCESS";
                     // return success(response);
                 })
                 .catch((error) => {
-                    console.log(error);
+                    //console.log(error);
+                    const data = error.response.data;
+                    console.log(data.error);
+                    this.feedback = `ERROR: ${data.error}`;
                     // return fail(error);
                 });
         },

@@ -17,6 +17,7 @@
 <body>
     <nav class="navbar navbar-light bg-primary">
         <span class="navbar-brand mb-0 text-white h1 ">My App</span>
+        <a class="mx-3 text-white h5" href="{{ route('home') }}">My Profile</a>
     </nav>
     <div id="app">
         <myapp></myapp>
