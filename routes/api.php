@@ -20,4 +20,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->namespace('Api')->group(function () {
     Route::resource('users', 'UserController');
+    Route::resource('contacts', 'ContactController');
 });
