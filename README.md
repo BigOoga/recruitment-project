@@ -15,4 +15,6 @@ DB for user data and record of the exchanges.
 API calls for authentication and email exchange.  
 Basic HTML, CSS, JS for the UI and its interaction with the API. It is possible to use and ID code in a form instead the QR code.  
 
+<hr>
+   
 I opted for using the Laravel framework as it streamlines nicely the whole process.
